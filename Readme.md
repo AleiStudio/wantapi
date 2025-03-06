@@ -54,7 +54,8 @@ const sfw = new WantDiversion();
 
 ```javascript
 (async () => {
-    console.log(await api.getbonitas());
+    console.log(await nsfw.getbonitas());
+    console.log(await sfw.getmeme());
 })();
 ```
 
