@@ -44,6 +44,10 @@ class WantReal {
     async getinterracial() {
         return await this.fetchEndpoint('interracial');
     }
+
+    async getpussy() {
+        return await this.fetchEndpoint('pussy');
+    }
 }
 
 module.exports = WantReal;
