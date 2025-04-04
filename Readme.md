@@ -15,7 +15,7 @@ npm install wantapi
 ### Importar el paquete
 
 ```javascript
-const { WantReal, WantHentai, WantDiversion } = require('wantapi');
+const { WantReal, WantHentai, WantDiversion, WantReddit } = require('wantapi');
 ```
 
 ### Crear instancias
@@ -48,6 +48,7 @@ const sfw = new WantDiversion();
  - getpfp
  - getgif
  - getinterracial
+ - getpussy
   </details>
 
 #### 🖼 WantAPI
@@ -57,6 +58,15 @@ const sfw = new WantDiversion();
     console.log(await nsfw.getbonitas());
     console.log(await sfw.getmeme());
 })();
+```
+
+Ahora puedes obtener medios de Reddit fácilmente con:
+
+```javascript
+// Obtener URL de media de un subreddit
+WantReddit('subreddit')
+  .then(mediaUrl => console.log(mediaUrl))
+  .catch(error => console.error(error));
 ```
 
 ## Documentation Oficial

@@ -1,6 +1,6 @@
 {
   "name": "wantapi",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "API Discord 2025",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/AleiStudio/wantapi/issues"
   },
-  "homepage": "https://github.com/AleiStudio/wantapi#readme",
+  "homepage": "https://doc.apiwant.xyz/",
   "keywords": [
     "nsfw",
     "hentai",
