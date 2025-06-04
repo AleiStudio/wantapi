@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 class WantReal {
-    constructor(baseURL = 'https://cdn.wantapi.xyz/api') {
+    constructor(baseURL = 'https://api.want.cat/api') {
         this.client = axios.create({
             baseURL,
         });

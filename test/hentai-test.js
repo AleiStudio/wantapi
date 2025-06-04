@@ -1,6 +1,6 @@
 const WantHentai = require('../src/hentai');
-const api = new WantHentai();
+const nsfw = new WantHentai();
 
 (async () => {
-    console.log(await api.getasshentai()); // Obtiene un meme
+    console.log(await nsfw.getasshentai()); // Obtiene un meme
 })();
