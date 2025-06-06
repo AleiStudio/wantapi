@@ -38,6 +38,9 @@ const sfw = new WantDiversion();
 | getgif                  |
 | getinterracial          |
 | getpussy                |
+| getvideos               |
+| getgifv2                |
+| getcosplayv2            |
 
 
 #### 🖼 WantAPI
