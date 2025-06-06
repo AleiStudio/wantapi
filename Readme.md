@@ -33,11 +33,11 @@ const sfw = new WantDiversion();
 | getbonitas              | getnekonsfw          | getmeme     |
 | getboobs                | getwaifus            |             |
 | getcosplay              | getasshentai         |             |
-| getegirls               |                      |             |
-| getpfp                  |                      |             |
-| getgif                  |                      |             |
-| getinterracial          |                      |             |
-| getpussy                |                      |             |
+| getegirls               |
+| getpfp                  |
+| getgif                  |
+| getinterracial          |
+| getpussy                |
 
 
 #### 🖼 WantAPI
