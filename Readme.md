@@ -27,29 +27,18 @@ const sfw = new WantDiversion();
 ```
 
 # Lista
- - **Diversion**
-  <details>
-  - getmeme
-  </details>
 
- - **Hentai**
-  <details>
-  - getnekonsfw
-  - getwaifus
-  - getasshentai
-  </details>
+| Real                    | Animado              | Diversion   | realv2 |
+|-------------------------|----------------------|----------------------|
+| getbonitas              | getnekonsfw          | getmeme     | getvideos |
+| getboobs                | getwaifus            |             | getgifv2 |
+| getcosplay              | getasshentai         |             | getcosplayv2 |
+| getegirls               |                      |             |             |
+| getpfp                  |                      |             |             |
+| getgif                  |                      |             |             |
+| getinterracial          |                      |             |             |
+| getpussy                |                      |             |             |
 
- - **Real**
-  <details>
- - getbonitas
- - getboobs
- - getcosplay
- - getegirls
- - getpfp
- - getgif
- - getinterracial
- - getpussy
-  </details>
 
 #### 🖼 WantAPI
 

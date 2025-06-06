@@ -5,4 +5,4 @@ const WantReddit = require('./src/reddit');
 
 module.exports = { WantDiversion, WantHentai, WantReal, WantReddit };
 
-// require('./test/npm-test.js');
+require('./test/npm-test.js');
