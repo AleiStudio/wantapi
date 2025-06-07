@@ -1,3 +1,15 @@
+<div align="center">
+    <br />
+    <p>
+        <a href="https://doc.want.cat/"><img src="https://cdn.want.cat/Want.png" width="546" alt="wantapi" /></a>
+    </p>
+    <br />
+    <p>
+        <a href="https://www.npmjs.com/package/wantapi"><img src="https://img.shields.io/npm/v/wantapi" alt="npm version" /></a>
+        <a href="https://www.npmjs.com/package/wantapi"><img src="https://img.shields.io/npm/d18m/wantapi" alt="npm downloads" /></a>
+    </p>
+</div>
+
 # WantAPI
 
 WantAPI es un paquete npm que proporciona acceso a diferentes categorías de imágenes y contenido mediante la API de WantAPI. Puedes obtener imágenes generales, contenido NSFW y SFW de manera sencilla.
@@ -90,4 +102,7 @@ La función devuelve un objeto con los siguientes campos:
 
 Puedes ir a nuestra API directmente desde la documentación oficial de WantAPI:
 
-[DOCS](https://doc.apiwant.xyz/)
+[DOCS](https://doc.want.cat/)
+
+- Unete a nuestro servidor de Discord para obtener ayuda y soporte:
+[![Jedi Studio](https://api.weblutions.com/discord/invite/kqbznaqtGm/)](https://discord.gg/kqbznaqtGm)  
