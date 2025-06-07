@@ -33,8 +33,8 @@ const { WantReal, WantRealV2, WantHentai, WantDiversion, WantReddit } = require(
 ### Crear instancias
 
 ```javascript
-const nsfw = new WantReal(); 
-const nsfw = new WantRealv2();  
+const real = new WantReal(); 
+const realv2 = new WantRealv2();  
 const nsfw = new WantHentai(); 
 const sfw = new WantDiversion();  
 ```
@@ -64,7 +64,8 @@ const sfw = new WantDiversion();
 
 ```javascript
 (async () => {
-    console.log(await nsfw.getbonitas());
+    console.log(await real.getbonitas());
+    console.log(await realv2.getvideosv2());
     console.log(await nsfw.getasshentai());
     console.log(await sfw.getmeme());
     ///-- 1 a 5 enlaces --///
