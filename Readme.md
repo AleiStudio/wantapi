@@ -27,13 +27,14 @@ npm install wantapi
 ### Importar el paquete
 
 ```javascript
-const { WantReal, WantHentai, WantDiversion, WantReddit } = require('wantapi');
+const { WantReal, WantRealV2, WantHentai, WantDiversion, WantReddit } = require('wantapi');
 ```
 
 ### Crear instancias
 
 ```javascript
-const nsfw = new WantReal();  
+const nsfw = new WantReal(); 
+const nsfw = new WantRealv2();  
 const nsfw = new WantHentai(); 
 const sfw = new WantDiversion();  
 ```
@@ -50,7 +51,7 @@ const sfw = new WantDiversion();
 | getgif                  |
 | getinterracial          |
 | getpussy                |
-| getvideos               |
+| getvideosv2             |
 | getgifv2                |
 | getcosplayv2            |
 
@@ -104,5 +105,6 @@ Puedes ir a nuestra API directmente desde la documentación oficial de WantAPI:
 
 [DOCS](https://doc.want.cat/)
 
-- Unete a nuestro servidor de Discord para obtener ayuda y soporte:
+### Unete a nuestro servidor de Discord para obtener ayuda y soporte:
+
 [![Jedi Studio](https://api.weblutions.com/discord/invite/kqbznaqtGm/)](https://discord.gg/kqbznaqtGm)  

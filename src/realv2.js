@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-class WantReal {
+class WantRealv2 {
     constructor(baseURL = 'https://real.want.cat/api') {
         this.client = axios.create({
             baseURL,
@@ -17,7 +17,7 @@ class WantReal {
         }
     }
 
-    async getvideos() {
+    async getvideosv2() {
         return await this.fetchEndpoint('videos');
     }
 
@@ -30,4 +30,4 @@ class WantReal {
     }
 }
 
-module.exports = WantReal;
+module.exports = WantRealv2;
