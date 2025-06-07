@@ -51,9 +51,13 @@ const sfw = new WantDiversion();
 | getgif                  |
 | getinterracial          |
 | getpussy                |
+
+| Real V2                 |
+|-------------------------|
 | getvideosv2             |
 | getgifv2                |
 | getcosplayv2            |
+| getassv2                |
 
 
 #### 🖼 WantAPI
@@ -63,9 +67,12 @@ const sfw = new WantDiversion();
     console.log(await nsfw.getbonitas());
     console.log(await nsfw.getasshentai());
     console.log(await sfw.getmeme());
+    ///-- 1 a 5 enlaces --///
+    api.getassv2(5).then(urls => {console.log(urls);});
 })();
 ```
 
+# Reddit
 Ahora puedes obtener medios de Reddit fácilmente con:
 
 ```javascript

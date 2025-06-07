@@ -5,4 +5,5 @@ const api = new WantReal();
     console.log(await api.getvideosv2());
     console.log(await api.getgifv2());
     console.log(await api.getcosplayv2());
+    api.getassv2(5).then(urls => {console.log(urls);});
 })();

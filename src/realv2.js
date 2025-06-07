@@ -7,9 +7,22 @@ class WantRealv2 {
         });
     }
 
-    async fetchEndpoint(endpoint) {
+    async fetchEndpoint(endpoint, count = null) {
         try {
-            const response = await this.client.get(`/${endpoint}`);
+            const urlPath = count ? `${count}/${endpoint}` : endpoint;
+            const response = await this.client.get(`/${urlPath}`);
+            
+            if (count) {
+                const urls = [];
+                for (let i = 1; i <= count; i++) {
+                    const urlKey = i === 1 ? 'url' : `url-${i}`;
+                    if (response.data[urlKey]) {
+                        urls.push(response.data[urlKey]);
+                    }
+                }
+                return urls;
+            }
+            
             return response.data.url;
         } catch (error) {
             console.error(`Error en ${endpoint}:`, error.response?.data || error.message);
@@ -17,16 +30,20 @@ class WantRealv2 {
         }
     }
 
-    async getvideosv2() {
-        return await this.fetchEndpoint('videos');
+    async getvideosv2(count = null) {
+        return await this.fetchEndpoint('videos', count);
     }
 
-    async getgifv2() {
-        return await this.fetchEndpoint('gifs');
+    async getgifv2(count = null) {
+        return await this.fetchEndpoint('gifs', count);
     }
 
-    async getcosplayv2() {
-        return await this.fetchEndpoint('cosplay');
+    async getcosplayv2(count = null) {
+        return await this.fetchEndpoint('cosplay', count);
+    }
+
+    async getassv2(count = null) {
+        return await this.fetchEndpoint('ass', count);
     }
 }
 
