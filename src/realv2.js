@@ -45,6 +45,18 @@ class WantRealv2 {
     async getassv2(count = null) {
         return await this.fetchEndpoint('ass', count);
     }
+
+    async getlesbianv2(count = null) {
+        return await this.fetchEndpoint('lesbian', count);
+    }
+
+    async gettransgenderv2(count = null) {
+        return await this.fetchEndpoint('transgender', count);
+    }
+
+    async getbbcv2(count = null) {
+        return await this.fetchEndpoint('bbc', count);
+    }
 }
 
 module.exports = WantRealv2;

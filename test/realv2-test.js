@@ -1,9 +1,9 @@
 const WantReal = require('../src/realv2');
-const api = new WantReal();
+const realv2 = new WantReal();
 
 (async () => {
-    console.log(await api.getvideosv2());
-    console.log(await api.getgifv2());
-    console.log(await api.getcosplayv2());
-    api.getassv2(5).then(urls => {console.log(urls);});
+    console.log(await realv2.getlesbianv2());
+    console.log(await realv2.gettransgenderv2());
+    console.log(await realv2.getbbcv2());
+    realv2.getbbcv2(5).then(urls => {console.log(urls);});
 })();

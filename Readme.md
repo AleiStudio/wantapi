@@ -58,9 +58,12 @@ const sfw = new WantDiversion();
 | getgifv2                |
 | getcosplayv2            |
 | getassv2                |
+| getlesbianv2            |
+| gettransgenderv2        |
+| getbbcv2                |
 
 
-#### 🖼 WantAPI
+# 🖼 WantAPI
 
 ```javascript
 (async () => {
@@ -69,7 +72,7 @@ const sfw = new WantDiversion();
     console.log(await nsfw.getasshentai());
     console.log(await sfw.getmeme());
     ///-- 1 a 5 enlaces --///
-    api.getassv2(5).then(urls => {console.log(urls);});
+    realv2.getassv2(5).then(urls => {console.log(urls);});
 })();
 ```
 

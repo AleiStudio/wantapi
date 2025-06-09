@@ -1,6 +1,6 @@
 {
   "name": "wantapi",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "API Discord 2025",
   "main": "index.js",
   "scripts": {
