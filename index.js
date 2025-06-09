@@ -45,6 +45,6 @@ function showUpdateMessage(currentVersion, latestVersion) {
 
 checkForUpdates();
 
-require('./test/npm-test.js');
+// require('./test/npm-test.js');
 
 module.exports = { WantDiversion, WantHentai, WantReal, WantRealV2, WantReddit };
