@@ -1,8 +1,4 @@
-const WantDiversion = require('./src/diversion');
-const WantHentai = require('./src/hentai');
-const WantReal = require('./src/real');
-const WantReddit = require('./src/reddit');
-const WantRealV2 = require('./src/realv2');
+const WantAPI = require('./src/wantapi');
 const https = require('https');
 const pkg = require('./package.json');
 
@@ -47,4 +43,4 @@ checkForUpdates();
 
 // require('./test/npm-test.js');
 
-module.exports = { WantDiversion, WantHentai, WantReal, WantRealV2, WantReddit };
+module.exports = { WantAPI };

@@ -1,7 +1,7 @@
 <div align="center">
     <br />
     <p>
-        <a href="https://doc.want.cat/"><img src="https://cdn.want.cat/Want.png" width="546" alt="wantapi" /></a>
+        <a href="https://api.want.cat/"><img src="https://cdn.want.cat/Want.png" width="546" alt="wantapi" /></a>
     </p>
     <br />
     <p>
@@ -12,7 +12,7 @@
 
 # WantAPI
 
-WantAPI es un paquete npm que proporciona acceso a diferentes categorías de imágenes y contenido mediante la API de WantAPI. Puedes obtener imágenes generales, contenido NSFW y SFW de manera sencilla.
+WantAPI es un paquete npm que proporciona acceso a la API oficial de want.cat para obtener contenido multimedia NSFW kawaii de alta calidad. Accede a miles de fotos y videos categorizados de manera sencilla.
 
 ## 📦 Instalación
 
@@ -27,95 +27,109 @@ npm install wantapi
 ### Importar el paquete
 
 ```javascript
-const { WantReal, WantRealV2, WantHentai, WantDiversion, WantReddit } = require('wantapi');
+const { WantAPI } = require('wantapi');
 ```
 
-### Crear instancias
+### Crear instancia con token
 
 ```javascript
-const real = new WantReal(); 
-const realv2 = new WantRealv2();  
-const nsfw = new WantHentai(); 
-const sfw = new WantDiversion();  
+const api = new WantAPI('YOUR_TOKEN');
 ```
 
-# Lista
+⚠️ **Importante**: Todos los endpoints requieren un token de autenticación. Obtén tu token en [api.want.cat](https://api.want.cat/)
 
-| Real                    | Animado              | Diversion   |
-|-------------------------|----------------------|-------------|
-| getbonitas              | getnekonsfw          | getmeme     |
-| getboobs                | getwaifus            |             |
-| getcosplay              | getasshentai         |             |
-| getegirls               |
-| getpfp                  |
-| getgif                  |
-| getinterracial          |
-| getpussy                |
-
-| Real V2                 |
-|-------------------------|
-| getvideosv2             |
-| getgifv2                |
-| getcosplayv2            |
-| getassv2                |
-| getlesbianv2            |
-| gettransgenderv2        |
-| getbbcv2                |
-
-
-# 🖼 WantAPI
+## 📖 Ejemplo de uso
 
 ```javascript
+const { WantAPI } = require('wantapi');
+
+const api = new WantAPI('YOUR_TOKEN');
+
 (async () => {
-    console.log(await real.getbonitas());
-    console.log(await realv2.getvideosv2());
-    console.log(await nsfw.getasshentai());
-    console.log(await sfw.getmeme());
-    ///-- 1 a 5 enlaces --///
-    realv2.getassv2(5).then(urls => {console.log(urls);});
+    // Obtener estadísticas del cache
+    const cache = await api.getCache();
+    console.log('Cache:', cache);
+
+    // Obtener imágenes de diferentes categorías
+    const bonitas = await api.getBonitas();
+    const memes = await api.getMemes();
+    const cosplay = await api.getCosplay();
+    const neko = await api.getNekonsfw();
+    const trap = await api.getTrap();
+
+    console.log('Bonitas:', bonitas);
+    console.log('Memes:', memes);
+    console.log('Cosplay:', cosplay);
 })();
 ```
 
-# Reddit
-Ahora puedes obtener medios de Reddit fácilmente con:
+## 📋 Métodos disponibles
 
-```javascript
-// Obtener URL de media de un subreddit
-WantReddit('subreddit')
-  .then(data => {
-    console.log('Título:', data.title);
-    console.log('URL del media:', data.mediaUrl);
-  })
-  .catch(err => console.error('Error:', err));
+| Método                    | Descripción                              |
+|---------------------------|------------------------------------------|
+| `getCache()`              | Estadísticas del cache de archivos       |
+| `getBonitas()`            | Imágenes bonitas (395 imágenes)          |
+| `getAzhentai()`           | Hentai (376 imágenes)                    |
+| `getCosplay()`            | Cosplay (501 imágenes)                   |
+| `getRealboo()`            | Imágenes reales boobs (611 imágenes)     |
+| `getMemes()`               | Memes (697 imágenes)                     |
+| `getGif()`                 | GIFs (209 imágenes)                      |
+| `getInterracial()`        | Interracial (813 imágenes)               |
+| `getPussie()`             | Pussy (901 imágenes)                     |
+| `getRealpfp()`            | Profile pictures reales (646 imágenes)   |
+| `getNekonsfw()`           | Nekos NSFW (610 imágenes)                |
+| `getGifmp4rule34()`       | GIFs Rule34 (637 imágenes)               |
+| `getTrap()`               | Trap (1067 imágenes)                     |
+| `getRealegirls()`         | E-girls reales (624 imágenes)            |
+
+## 📄 Formato de respuesta
+
+### Respuesta exitosa
+```json
+{
+  "success": true,
+  "Discord": "https://discord.gg/7JQgJXQ",
+  "url": "https://media.example.com/bonitas/image.jpg"
+}
 ```
-## 🔍 Estructura de la respuesta
 
-La función devuelve un objeto con los siguientes campos:
+### Respuesta de error
+```json
+{
+  "success": false,
+  "message": "No hay imágenes."
+}
+```
 
-| Propiedad               | Tipo                 | Descripción |
-|-------------------------|----------------------|-------------|
-| `title`                 | `string`             | Título del post |
-| `author`                | `string`             | Usuario que publicó el post |
-| `subreddit`             | `string`             | Subreddit de origen |
-| `mediaUrl`              | `string`             | URL directa del contenido multimedia (imagen/video/GIF) |
-| `postUrl`               | `string`             | Enlace al post en Reddit |
-| `thumbnail`             | `string`             | Miniatura del post |
-| `upvotes`, `downvotes`, `score` | `number` | Estadísticas de votos |
-| `upvoteRatio`           | `number`             | Porcentaje de upvotes (ej: `0.95` = 95%) |
-| `commentCount`          | `number`             | Número de comentarios |
-| `createdAt`             | `string`             | Fecha de creación en formato ISO |
-| `createdAtFormatted`    | `string`             | Fecha legible (ej: `"2 hours ago"`) |
-| `isNSFW`                | `boolean`            | Si el post es +18 |
-| `isVideo`, `isGallery`  | `boolean`            | Tipo de contenido |
-| `mediaType`             | `string`             | Tipo de medio (`image`, `video`, `gallery`) |
-| `awards`                | `Array<object>`      | Premios (Reddit Awards) del post |
+### Respuesta de cache
+```json
+{
+  "bonitas": 395,
+  "Waifus": 5678
+}
+```
 
-## Documentation Oficial
+## 🔐 Obtener Token
 
-Puedes ir a nuestra API directmente desde la documentación oficial de WantAPI:
+1. Ve a [api.want.cat](https://api.want.cat/)
+2. Haz clic en "Iniciar Sesión" (autenticación con Discord)
+3. Una vez autenticado, obtendrás tu token
+4. Usa el token al crear la instancia: `new WantAPI('YOUR_TOKEN')`
 
-[DOCS](https://doc.want.cat/)
+## 📚 Documentación Oficial
 
-### Unete a nuestro servidor de Discord para obtener ayuda y soporte:
+Documentación completa de la API: [api.want.cat/docs](https://api.want.cat/docs)
 
-[![Jedi Studio](https://api.weblutions.com/discord/invite/kqbznaqtGm/)](https://discord.gg/kqbznaqtGm)  
+## 🤝 Soporte
+
+Únete a nuestro servidor de Discord para obtener ayuda y soporte:
+
+[![Discord](https://api.weblutions.com/discord/invite/kqbznaqtGm/)](https://discord.gg/kqbznaqtGm)
+
+## 📝 Licencia
+
+ISC
+
+## 👤 Autor
+
+Alei Mitch
