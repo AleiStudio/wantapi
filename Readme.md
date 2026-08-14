@@ -27,13 +27,14 @@ npm install wantapi
 ### Importar el paquete
 
 ```javascript
-const { WantAPI } = require('wantapi');
+const { WantAPI, WantSocial } = require('wantapi');
 ```
 
-### Crear instancia con token
+### Crear instancias con token
 
 ```javascript
 const api = new WantAPI('YOUR_TOKEN');
+const social = new WantSocial('YOUR_TOKEN');
 ```
 
 ⚠️ **Importante**: Todos los endpoints requieren un token de autenticación. Obtén tu token en [api.want.cat](https://api.want.cat/)
@@ -61,10 +62,21 @@ const api = new WantAPI('YOUR_TOKEN');
     console.log('Memes:', memes);
     console.log('Cosplay:', cosplay);
 })();
+
+// Ejemplo de uso de WantSocial
+const { WantSocial } = require('wantapi');
+const social = new WantSocial('YOUR_TOKEN');
+
+(async () => {
+    // Verificar estado de streamer en Kick
+    const kickStatus = await social.getKick('adrianozendejas32');
+    console.log('Kick Status:', kickStatus);
+})();
 ```
 
 ## 📋 Métodos disponibles
 
+### Imágenes
 | Método                    | Descripción                              |
 |---------------------------|------------------------------------------|
 | `getCache()`              | Estadísticas del cache de archivos       |
@@ -81,6 +93,11 @@ const api = new WantAPI('YOUR_TOKEN');
 | `getGifmp4rule34()`       | GIFs Rule34 (637 imágenes)               |
 | `getTrap()`               | Trap (1067 imágenes)                     |
 | `getRealegirls()`         | E-girls reales (624 imágenes)            |
+
+### Redes Sociales
+| Método                    | Descripción                              |
+|---------------------------|------------------------------------------|
+| `getKick(username)`       | Verificar estado de streamer en Kick     |
 
 ## 📄 Formato de respuesta
 
@@ -106,6 +123,46 @@ const api = new WantAPI('YOUR_TOKEN');
 {
   "bonitas": 395,
   "Waifus": 5678
+}
+```
+
+### Respuesta de Kick (Live)
+```json
+{
+  "success": true,
+  "isLive": true,
+  "username": "adrianozendejas32",
+  "channel": {
+    "slug": "adrianozendejas32",
+    "broadcaster_user_id": 53715418,
+    "channel_description": ""
+  },
+  "stream": {
+    "title": "VISITANDO DISNEY CON LA MACHIN PATRICIOS / SHIFU",
+    "category": "Sin categoría",
+    "startedAt": "2026-08-11T20:29:06Z",
+    "url": "https://kick.com/adrianozendejas32",
+    "thumbnail": "https://images.kick.com/video_thumbnails/tLWOUdVZx7lO/TKkJQpdTY9cz/480.webp",
+    "viewerCount": 9248,
+    "isMature": false,
+    "language": "es"
+  },
+  "message": "El streamer está en transmisión"
+}
+```
+
+### Respuesta de Kick (Offline)
+```json
+{
+  "success": true,
+  "isLive": false,
+  "username": "elmexa9999",
+  "channel": {
+    "slug": "elmexa9999",
+    "broadcaster_user_id": 42162170,
+    "channel_description": ""
+  },
+  "message": "El streamer no está en transmisión"
 }
 ```
 

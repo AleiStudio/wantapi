@@ -1,4 +1,5 @@
 const WantAPI = require('./src/wantapi');
+const WantSocial = require('./src/social');
 const https = require('https');
 const pkg = require('./package.json');
 
@@ -41,6 +42,7 @@ function showUpdateMessage(currentVersion, latestVersion) {
 
 checkForUpdates();
 
-// require('./test/npm-test.js');
+// require('./test/wantapi-test.js');
+// require('./test/social-test.js');
 
-module.exports = { WantAPI };
+module.exports = { WantAPI, WantSocial };
